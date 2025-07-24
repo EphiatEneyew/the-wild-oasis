@@ -1,0 +1,11 @@
+/* daypicker.css */
+.rdp-months {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.rdp-month {
+  width: 100%;
+}
