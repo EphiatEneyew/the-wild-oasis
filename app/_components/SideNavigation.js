@@ -26,26 +26,29 @@ const navLinks = [
 
 function SideNavigation() {
   return (
-    <nav className='border-r border-primary-900'>
-      <ul className='flex flex-col gap-2 h-full text-lg'>
-        {navLinks.map((link) => (
-          <li key={link.name}>
-            <Link
-              className={`py-3 px-5 hover:bg-primary-900 hover:text-primary-100 transition-colors flex items-center gap-4 font-semibold text-primary-200`}
-              href={link.href}
-            >
-              {link.icon}
-              <span>{link.name}</span>
-            </Link>
-          </li>
-        ))}
-
-        <li className='mt-auto'>
-          <SignOutButton />
-        </li>
-      </ul>
+    <nav className='border-r border-primary-900 h-full flex flex-col'>
+      {/* Navigation links */}
+      <div className='flex-1'>
+        <ul className='flex flex-col gap-1 text-lg'>
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <Link
+                className={`py-2 px-5 hover:bg-primary-900 hover:text-primary-100 transition-colors flex items-center gap-4 font-semibold text-primary-200`}
+                href={link.href}
+              >
+                {link.icon}
+                <span>{link.name}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      {/* Sign-out button with reduced height */}
+      <div className='border-t border-primary-900'>
+        <SignOutButton className="py-1 px-5 w-full text-left" />
+      </div>
     </nav>
   );
 }
-
 export default SideNavigation;
