@@ -14,7 +14,7 @@ export default async function Reservation({cabin}) {
     <div >
         <div className="grid grid-cols-2 border border-primary-800 min-h-[400px]">
             <DateSelector settings={settings} cabin={cabin} bookedDates={bookedDates}/>
-            {session?.user ? (<ReservationForm cabin={cabin} user={session.user}/>) : <LoginMessage /> }
+            {session?.user ? (<ReservationForm cabin={cabin} user={session.user} settings={settings}/>) : <LoginMessage /> }
         </div>
         
     </div>

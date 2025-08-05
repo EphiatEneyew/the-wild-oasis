@@ -1,5 +1,5 @@
 import SelectCountry from "@/app/_components/SelectCountry";
-import UpdateForm from "@/app/_components/UpdateForm";
+import UpdateForm from "@/app/_components/ProfileUpdateForm";
 import { auth } from "@/app/_lib/auth";
 import { getGuest } from "@/app/_lib/data-service";
 
@@ -9,8 +9,6 @@ export const metadata = {
 export default async function Page() {
   const session = await auth();
   const guest = await getGuest(session.user.email);
-  console.log(guest);
-  console.log("elep")
 
   return (
     <div>

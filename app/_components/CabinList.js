@@ -10,7 +10,7 @@ async function CabinList({ filter }) {
   if (!cabins.length ) return null;
 
   let displayedCabins = [];
-  console.log(filter);
+  //console.log(filter);
   if (filter === "all") displayedCabins = cabins;
   if (filter === "small") displayedCabins = cabins.filter((cabin)=> cabin.maxCapacity <= 3);
   if (filter === "medium") displayedCabins = cabins.filter((cabin)=> cabin.maxCapacity >= 4 && cabin.maxCapaciity <= 7);

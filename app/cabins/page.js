@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Spinner from "../_components/Spinner";
 import CabinList from "../_components/CabinList";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
 
 //export const revalidate = 0; // opt out Data Cache and make the page dynamic render
 export const revalidate = 3600;
@@ -12,7 +13,6 @@ export const metadata = {
 
 
 export default  function Page({ searchParams }) {
-   console.log(searchParams);
   const filter = searchParams?.capacity ?? "all";
 
   return (
@@ -35,6 +35,7 @@ export default  function Page({ searchParams }) {
       <Suspense fallback={<Spinner />} key={filter}>
         <CabinList filter={filter}/>
       </Suspense>
+      <ReservationReminder />
     </div>
   );
 }

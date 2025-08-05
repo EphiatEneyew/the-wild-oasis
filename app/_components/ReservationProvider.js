@@ -7,8 +7,6 @@ export const ReservationProvider = ({ children }) => {
   const defaultRange = { from: undefined, to: undefined };
   const [range, setRange] = useState(defaultRange);
 
-  
-
   const resetRange = () => {
     setRange(defaultRange);
   };
