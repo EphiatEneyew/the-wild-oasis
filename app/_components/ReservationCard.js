@@ -70,7 +70,7 @@ function ReservationCard({ booking, onDelete }) {
         </div>
       </div>
 
-      <div className='flex flex-col border-l border-primary-800 w-[100px]'>
+      { isPast(new Date(startDate)) ? <div className='flex border-l border-primary-800 w-[100px]'></div> : (<div className='flex flex-col border-l border-primary-800 w-[100px]'>
         <Link
           href={`/account/reservations/edit/${id}`}
           className='group flex items-center gap-2 uppercase text-xs font-bold text-primary-300 border-b border-primary-800 flex-grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900'
@@ -79,7 +79,7 @@ function ReservationCard({ booking, onDelete }) {
           <span className='mt-1'>Edit</span>
         </Link>
         <DeleteReservation bookingId={id} onDelete={onDelete}/>
-      </div>
+      </div>) }
     </div>
   );
 }
